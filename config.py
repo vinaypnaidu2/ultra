@@ -14,6 +14,7 @@ parser.add_argument('--type', type = str, default = 'both')
 parser.add_argument('--bs', type = int, default = 10, help = 'batch size')
 parser.add_argument('--ondevice', type = bool, default = False, help = 'to test training on device')
 parser.add_argument('--save_dir', type = str, default = 'result')
+parser.add_argument('--pretrain', type = bool, default = False)
 
 trainconfig = parser.parse_args()
 trainconfig.device = 'cuda' if torch.cuda.is_available() else 'cpu'

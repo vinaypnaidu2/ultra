@@ -32,6 +32,13 @@ def train(trainconfig):
         losses = ckp['losses']
         model.load_state_dict(ckp['model'])
         start_step = ckp['step']
+        if trainconfig.pretrain:
+            max_ssim = 0
+            max_psnr = 0
+        max_ssim = ckp['max_ssim']
+        max_psnr = ckp['max_psnr']
+        psnrs = ckp['psnrs']
+        ssims = ckp['ssims']
         print(f'Resume training from step {start_step} :')
     else :
         print('Train from scratch :')
