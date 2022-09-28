@@ -19,5 +19,5 @@ parser.add_argument('--pretrain', type = bool, default = False)
 trainconfig = parser.parse_args()
 trainconfig.device = 'cuda' if torch.cuda.is_available() else 'cpu'
 model_name = trainconfig.dataset + '_' + trainconfig.type 
-trainconfig.model_dir = './' + model_name +'.pk'
+trainconfig.model_dir = '/kaggle/working/ultra/' + model_name +'.pk'
 
